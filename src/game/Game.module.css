@@ -1,0 +1,9 @@
+.game {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gameControls {
+  margin-top: 16px;
+}

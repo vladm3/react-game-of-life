@@ -1,6 +1,38 @@
-# Getting Started with Create React App
+# Game of Life
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Basic implementation of the well-known Game of Life.
+
+![Preview of the Game](./preview.png)
+
+## Implementation Details
+
+### Game Logic
+
+The business logic of the game itself is framework-agnostic and is stored in [`gameLogic.ts`](./src/game/gameLogic.ts).
+
+Business logic is covered with unit tests in [`gameLogic.test.ts`](./src/game/gameLogic.test.ts).
+The tests focus only on public API of the module (the exported methods) and try to check that all rules of the game work as expected.
+
+The app stores board state as 2d array however as future improvement it can be transformed to zero-padded linear array.
+
+### React-specific Notes
+
+Two custom hooks are added to the app as a way to hide implementation details and provide only relevant API for consumers.
+
+`useInterval` is used to run arbitrary callback function with the specified interval.
+
+`useGame` controls the game flow and exposes methods to control the flow from a React component.
+
+More tests should be added to verify that the hooks work as expected but it's out of scope for this task.
+
+### State Management
+
+My first idea was to use Redux for state-management but it felt as an overkill here, so regular component-level state is used for state management.
+
+### Rendering
+
+Flexbox is used to render the grid of cells.
+It's not the most performant option but it provides the flexibility to change board size without any additional changes in components code.
 
 ## Available Scripts
 

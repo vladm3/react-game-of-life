@@ -1,0 +1,22 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.boardRow {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.boardCell {
+  flex: 1;
+  border: 1px solid #ddd;
+}
+
+.boardCellActive {
+  background: #000;
+}
